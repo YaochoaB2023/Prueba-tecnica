@@ -1,0 +1,39 @@
+.arriba{
+    background: rgb(0,121,254);
+    background: linear-gradient(0deg, rgba(0,121,254,1) 0%, rgba(0,133,254,1) 35%, rgba(33,161,255,1) 100%);
+    display: flex;
+    align-items: center;
+}
+.streaming{
+    width: 50%;
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    padding-left: 8%;
+}
+.login {
+    width: 25%;
+    align-items: end;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: end;
+}
+.start{
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.start h1{
+    background-color: black;
+}
+.abajo{
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(46,46,46,1) 44%, rgba(0,0,0,1) 100%);
+}
+.titles{
+    
+    font-size: 1.55rem;
+    color: white;
+}
