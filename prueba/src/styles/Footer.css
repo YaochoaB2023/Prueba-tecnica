@@ -1,0 +1,42 @@
+
+.footer{
+    background-color:black;
+    color: white;
+}
+.arriba-2{
+    display: flex;
+    gap: 10px;
+    padding-left: 8%;
+    color: rgba(204,204,204,1);
+}
+.medio{
+    color: rgba(168,168,168,1);
+    padding-left: 8%;
+}
+.abajo-2{
+    display: flex;
+    width: 100%;
+    padding-left: 8%;
+}
+.izquierda{
+    display: flex;
+    gap: 10px;
+    width: 50%;
+    justify-content: left;
+    align-items: center;
+}
+
+.izquierda div{
+    width: 3%;
+}
+
+.derecha{
+    display: flex;
+    width: 50%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.windows{
+    width: 12%;
+}
