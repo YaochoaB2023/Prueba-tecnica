@@ -5,7 +5,7 @@ export const NavBar = () => {
     <>
     <div className="navbar">
         <div className=' py-2 arriba'>
-            <div className="streaming px-20">
+            <div className="streaming">
                 <h1>DEMO Streaming</h1>
             </div>
             <div className="login px-10">
@@ -20,7 +20,7 @@ export const NavBar = () => {
             </div>
         </div>
         <div className=' py-2 abajo'>
-            <div className="titles px-20">
+            <div className="titles">
                 <h1>Popular Titles</h1>
             </div>
         </div>
