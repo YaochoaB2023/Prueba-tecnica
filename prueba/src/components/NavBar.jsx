@@ -1,6 +1,27 @@
-import React from 'react'
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import '../styles/NavBar.css'
+
+
+
 export const NavBar = () => {
+
+    const [pageTitle, setPageTitle] = useState('Popular Titles');
+    const location = useLocation();
+  
+    useEffect(() => {
+      switch (location.pathname) {
+        case '/series':
+          setPageTitle('Popular Series');
+          break;
+        case '/peliculas':
+          setPageTitle('Popular Movies');
+          break;
+        default:
+          setPageTitle('Popular Titles');
+      }
+    }, [location.pathname]);
+
   return (
     <>
     <div className="navbar">
@@ -9,19 +30,19 @@ export const NavBar = () => {
                 <h1>DEMO Streaming</h1>
             </div>
             <div className="login px-10">
-            <button class=" text-white font-bold py-2 px-4 rounded">
+            <button className=" text-white font-bold py-2 px-4 rounded">
                  Log in
             </button>
             </div>
             <div className="start  ">
-            <button class="bg-black hover:bg-black-700 text-white font-bold py-2 px-4 ">
+            <button className="bg-black hover:bg-black-700 text-white font-bold py-2 px-4 ">
                 start your free trial
             </button>
             </div>
         </div>
         <div className=' py-2 abajo'>
             <div className="titles">
-                <h1>Popular Titles</h1>
+                <h1>{pageTitle}</h1>
             </div>
         </div>
     </div>

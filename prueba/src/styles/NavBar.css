@@ -13,12 +13,12 @@
 }
 .login {
     width: 25%;
-    align-items: end;
+    align-items: flex-end;
     color: white;
     font-weight: 600;
     font-size: 1.1rem;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .start{
     color: white;

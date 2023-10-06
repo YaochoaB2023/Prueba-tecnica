@@ -17,26 +17,33 @@
     display: flex;
     width: 100%;
     padding-left: 8%;
+    margin-top: 25px;
 }
 .izquierda{
     display: flex;
-    gap: 10px;
+    gap: 25px;
     width: 50%;
     justify-content: left;
     align-items: center;
 }
 
-.izquierda div{
+.izquierda .facebook{
     width: 3%;
 }
-
+.izquierda div{
+    width: 4%;
+}
 .derecha{
-    display: flex;
     width: 50%;
-    gap: 10px;
+}
+.masDerecha{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
-.windows{
-    width: 12%;
+.derecha img{
+    width: 95%;
 }

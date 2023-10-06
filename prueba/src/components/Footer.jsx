@@ -1,4 +1,3 @@
-import React from 'react'
 import '../styles/Footer.css'
 import facebook from '../assets/social/facebook-white.svg'
 import twitter from '../assets/social/twitter-white.svg'
@@ -10,7 +9,7 @@ import windows from '../assets/store/windows-store.svg'
 export const Footer = () => {
   return (
     <>
-    <div className="footer py-10">
+    <div className="footer py-10 mt-10">
       <div className="arriba-2">
         <div className="espacio">
           Home
@@ -54,14 +53,16 @@ export const Footer = () => {
         </div>
 
         <div className="derecha">
-          <div className="apple">
-              <img src={apple} alt="" />
-          </div>
-          <div className="play">
-            <img src={play} alt="" />
-          </div>
-          <div className="windows">
-            <img src={windows} alt="" />
+          <div className="masDerecha">
+            <div className="apple">
+                <img src={apple} alt="" />
+            </div>
+            <div className="play">
+              <img src={play} alt="" />
+            </div>
+            <div className="windows">
+              <img src={windows} alt="" />
+            </div>
           </div>
         </div>
       </div>
