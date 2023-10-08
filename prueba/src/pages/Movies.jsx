@@ -8,10 +8,32 @@ export const Movies = () => {
 
   const [datos, setDatos] = useState(null);
   const [popupInfo, setPopupInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setDatos(JSON);
+    const fetchData = async () => {
+      try {
+        // Simulación de carga
+        setTimeout(() => {
+
+          setDatos(JSON);
+          setLoading(false);
+
+        },0);
+
+        // throw new Error('Simulated error');
+
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+        setError('Oops, something went wrong...');
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
+
 
   const filteredAndSortedData = () => {
     return datos?.entries
@@ -30,11 +52,21 @@ export const Movies = () => {
 
   return (
     <>
-      <NavBar/>
+      <NavBar></NavBar>
+      {loading? (
+        <div className="message">
+          <p>Loading...</p>
+        </div>
+      ): error ? (
+        <div className="message">
+          <p>{error}</p>
+        </div>
+      ):(
       <div className="result-box">
         {filteredAndSortedData()?.slice(0, 20).map((entry, index) => (
           <div key={index}  className="caja">
-              <div >
+              <div className='image'>
+                <div className="imagee"></div>
                 <img src={entry.images["Poster Art"]?.url} alt={`Poster for ${entry.title}`} />
               </div>
               <div className="title">
@@ -46,19 +78,21 @@ export const Movies = () => {
               </div>
           </div>
         ))}
-
         {popupInfo && (
           <div className={`popup ${popupInfo ? 'visible' : ''}`} onClick={closePopup}>
             <div className="modal">
+                <img src={popupInfo.images["Poster Art"]?.url} alt={`Poster for ${popupInfo.title}`} />
               <h3>{popupInfo.title}</h3>
-              <p>{popupInfo.description}</p>
-              <p>Release Year: {popupInfo.releaseYear}</p>
-              <img src={popupInfo.images["Poster Art"]?.url} alt={`Poster for ${popupInfo.title}`} />
-              <button onClick={closePopup}>Cerrar</button>
+              <p className='description'>{popupInfo.description}</p>
+              <p className='year'>Release Year: {popupInfo.releaseYear}</p>
+              <div className="cerrar">
+                <button onClick={closePopup}>X</button>
+              </div>
             </div>
           </div>
         )}
-      </div>
+      </div> 
+      )}
       <Footer/>
     </>
   )
